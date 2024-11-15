@@ -97,7 +97,7 @@ export default class StoryPreviewV extends Vue {
         } else {
             this.savedProduct = true;
             // attempt to fetch saved config file from the server (TODO: setup as express route?)
-            fetch(this.apiUrl + `/retrieve/${this.uid}`).then((res: Response) => {
+            fetch(this.apiUrl + `/retrieve/${this.uid}/latest`).then((res: Response) => {
                 if (res.status === 404) {
                     console.error(`There does not exist a saved product with UID ${this.uid}.`);
                     // redirect to canada.ca 404 page on invalid URL params
